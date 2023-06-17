@@ -16,6 +16,13 @@ repositories {
 }
 
 dependencies {
+
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+    implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.12' // Dependencia para Swagger UI
+    //implementation 'org.springdoc:springdoc-openapi-core:1.5.12' // Dependencia para la generación de Swagger
+
+
     // Spring boot
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springframework.boot:spring-boot-starter-web'

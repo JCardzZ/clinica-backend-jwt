@@ -1,5 +1,6 @@
 package com.mm.com.security.dto;
 
+
 import javax.validation.constraints.NotBlank;
 
 public class LoginUserDto {

@@ -4,6 +4,8 @@ import com.mm.com.crud.dto.MessageDto;
 import com.mm.com.global.util.Operations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -39,5 +41,16 @@ public class Exceptions {
 
         });
         return ResponseEntity.badRequest().body(new MessageDto(HttpStatus.BAD_REQUEST, Operations.trimBrackets(messages.toString())));
+    }
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<MessageDto> badCredentialsException(BadCredentialsException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new MessageDto(HttpStatus.NOT_FOUND, "Usuario no existe, intenta con otro"));
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<MessageDto> accessDeniedException(AccessDeniedException accessDeniedException) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body(new MessageDto(HttpStatus.FORBIDDEN, "No tienes acceso a este recurso"));
     }
 }

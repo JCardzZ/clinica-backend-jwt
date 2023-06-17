@@ -6,7 +6,6 @@ import com.mm.com.crud.repositoy.MascotaRepository;
 import com.mm.com.crud.util.AttributeException;
 import com.mm.com.crud.util.ResourceNotFoundException;
 import com.mm.com.global.util.Operations;
-import com.mm.com.security.repository.UserEntityRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

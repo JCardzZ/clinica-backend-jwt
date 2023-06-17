@@ -6,6 +6,7 @@ import com.mm.com.crud.entity.MascotaEntity;
 import com.mm.com.crud.service.MascotaService;
 import com.mm.com.crud.util.AttributeException;
 import com.mm.com.crud.util.ResourceNotFoundException;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,6 +27,7 @@ public class MascotaController {
     MascotaService mascotaService;
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping
+    @Operation(summary = "Microservicio para Consultar Saldo de TDC", description = "Microservicio para Consultar Saldo de TDC")
     public ResponseEntity<List<MascotaEntity>> getAllRegister() {
         log.info("<<<CONSULTANDO REGISTROS DE LA BD>>>");
         return ResponseEntity.ok(mascotaService.getAllRegister());
