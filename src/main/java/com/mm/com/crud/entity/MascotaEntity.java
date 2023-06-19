@@ -14,17 +14,22 @@ public class MascotaEntity extends EntityId {
     private String propietario;
     private String dui;
     private String direccion;
+    private String descripcionOperacion;
+
+    private String tiempoEsperado;
 
     public MascotaEntity() {
     }
 
-    public MascotaEntity(int id, String fechaIngreso, String nombreMascota, String propietario, String dui, String direccion) {
+    public MascotaEntity(int id, String fechaIngreso, String nombreMascota, String propietario, String dui, String direccion, String descripcionOperacion, String tiempoEsperado) {
         this.id = id;
         this.fechaIngreso = fechaIngreso;
         this.nombreMascota = nombreMascota;
         this.propietario = propietario;
         this.dui = dui;
         this.direccion = direccion;
+        this.descripcionOperacion = descripcionOperacion;
+        this.tiempoEsperado = tiempoEsperado;
     }
 
     public String getFechaIngreso() {
@@ -65,6 +70,22 @@ public class MascotaEntity extends EntityId {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public String getDescripcionOperacion() {
+        return descripcionOperacion;
+    }
+
+    public void setDescripcionOperacion(String descripcionOperacion) {
+        this.descripcionOperacion = descripcionOperacion;
+    }
+
+    public String getTiempoEsperado() {
+        return tiempoEsperado;
+    }
+
+    public void setTiempoEsperado(String tiempoEsperado) {
+        this.tiempoEsperado = tiempoEsperado;
     }
 }
 

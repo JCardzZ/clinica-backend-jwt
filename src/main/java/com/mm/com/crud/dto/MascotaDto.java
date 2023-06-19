@@ -20,4 +20,10 @@ public class MascotaDto {
     private String dui;
     @NotBlank(message = "Es obligatorio ingresar una direccion")
     private String direccion;
+
+    @NotBlank(message = "Es obligatorio ingresar una descripcion")
+    private String descripcionOperacion;
+
+    @NotBlank(message = "Es obligatorio ingresar el tiempo de espera")
+    private String tiempoEsperado;
 }

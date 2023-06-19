@@ -27,7 +27,6 @@ public class MascotaController {
     MascotaService mascotaService;
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     @GetMapping
-    @Operation(summary = "Microservicio para Consultar Saldo de TDC", description = "Microservicio para Consultar Saldo de TDC")
     public ResponseEntity<List<MascotaEntity>> getAllRegister() {
         log.info("<<<CONSULTANDO REGISTROS DE LA BD>>>");
         return ResponseEntity.ok(mascotaService.getAllRegister());

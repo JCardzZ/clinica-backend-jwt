@@ -15,7 +15,7 @@ public class CreateUserDto {
     @NotBlank(message = "Tu contraseña es requerido")
     private String password;
 
-    @NotEmpty(message = "Tu rol es obligatorio")
+   // @NotEmpty(message = "Tu rol es obligatorio")
     List<String> roles = new ArrayList<>();
 
     public CreateUserDto() {

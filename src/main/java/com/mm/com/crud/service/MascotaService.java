@@ -30,7 +30,7 @@ public class MascotaService {
         if (mascotaRepository.existsByDui(dto.getDui()))
             throw new AttributeException("Numero de DUI ya esta en uso");
             int id = Operations.autoIncrement(mascotaRepository.findAll());
-        MascotaEntity register = new MascotaEntity(id,dto.getFechaIngreso(), dto.getNombreMascota(),dto.getPropietario(), dto.getDui(),  dto.getDireccion());
+        MascotaEntity register = new MascotaEntity(id,dto.getFechaIngreso(), dto.getNombreMascota(),dto.getPropietario(), dto.getDui(),  dto.getDireccion(), dto.getDescripcionOperacion(), dto.getTiempoEsperado());
         return mascotaRepository.save(register);
     }
 
@@ -43,6 +43,8 @@ public class MascotaService {
         register.setPropietario(dto.getPropietario());
         register.setDui(dto.getDui());
         register.setDireccion(dto.getDireccion());
+        register.setDescripcionOperacion(dto.getDescripcionOperacion());
+        register.setTiempoEsperado(dto.getTiempoEsperado());
         return mascotaRepository.save(register);
     }
     public MascotaEntity delete(int id) throws ResourceNotFoundException {
